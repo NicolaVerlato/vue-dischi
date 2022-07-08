@@ -15,10 +15,11 @@ export default {
 .my_header{
     background-color: $card_bg_color;
     height: 80px;
-    line-height: 75px;
-
+    margin-bottom: 80px;
+    
     img{
         width: 50px;
+        padding-top: 15px;
         margin-left: 30px;
     }
 }

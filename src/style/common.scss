@@ -2,7 +2,7 @@
 
 @import './variables';
 
-@import '~bootstrap/scss/bootstrap';
+// @import '~bootstrap/scss/bootstrap';
 
 
 *{
@@ -14,4 +14,9 @@
 body{
     font-family: 'Roboto', sans-serif;
     background-color: $main_bg_color;
+}
+
+img{
+    width: 100%;
+    display: block;
 }
