@@ -1,5 +1,5 @@
 <template>
-    <div class="single_card">
+    <a href="#" class="single_card">
         <img :src="SingleCard.poster" :alt="SingleCard.author">
         <h3>
             {{ SingleCard.title }}
@@ -12,7 +12,7 @@
                 {{ SingleCard.year }}
             </div>
         </div>
-    </div>
+    </a>
 </template>
 
 <script>
@@ -42,6 +42,9 @@ export default {
     .artist{
         color: grey;
     }
-    
+    &:hover{
+        transform: scale(1.1);
+        transition-duration: 0.3s;
+    }
 }
 </style>
