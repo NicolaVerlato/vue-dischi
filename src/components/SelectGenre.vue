@@ -3,13 +3,12 @@
         <label for="genre">Seleziona il genere</label>
 
         <select v-model="selected" @change="$emit('SelectGenre', selected)">
+            <option>All</option>
             <option>Jazz</option>
             <option>Metal</option>
             <option>Pop</option>
             <option>Rock</option>
-            
         </select>
-         <span>{{selected}}</span>
     </div>
 </template>
 
@@ -21,7 +20,7 @@ export default {
     },
     data(){
         return{
-            selected: null
+            selected: 'All'
         }
     },
     computed:{

@@ -3,7 +3,7 @@
         <div class="genre">
             <SelectGenre @SelectGenre="compareGenre"/>
         </div>
-        <CardComponent v-for="card, index in arrayCards" :key="index" :SingleCard="card"/>
+        <CardComponent v-for="card, index in filterGenre" :key="index" :SingleCard="card"/>
     </div>
 </template>
 
@@ -29,7 +29,15 @@ export default {
         this.createCard()
     },
     computed:{
+        filterGenre(){
+            if(this.genre == 'All'){
+                return this.arrayCards;
+            }
 
+            return this.arrayCards.filter((card) => {
+                return card.genre.includes(this.genre)
+            })
+        }
     },
     methods: {
         createCard(){
@@ -50,7 +58,6 @@ export default {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     position: relative;
 
     .genre{

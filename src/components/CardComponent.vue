@@ -32,7 +32,7 @@ export default {
     background-color: $card_bg_color;
     width: calc(20% - 20px);
     text-align: center;
-    margin-bottom: 20px;
+    margin: 10px;
 
     h3{
         color: $white;
