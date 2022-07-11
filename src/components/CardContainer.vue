@@ -1,33 +1,44 @@
 <template>
     <div class="my_container">
+        <div class="genre">
+            <SelectGenre @SelectGenre="compareGenre"/>
+        </div>
         <CardComponent v-for="card, index in arrayCards" :key="index" :SingleCard="card"/>
     </div>
 </template>
 
 <script>
 import CardComponent from './CardComponent.vue'
+import SelectGenre from './SelectGenre.vue'
 import axios from "axios"
 
 export default {
     name: 'CardContainer',
     components: {
-        CardComponent
+        CardComponent,
+        SelectGenre
     },
     data(){
         return{
             urlApi: 'https://flynn.boolean.careers/exercises/api/array/music',
-            arrayCards: []
+            arrayCards: [],
+            genre: ''
         }
     },
     created(){
         this.createCard()
     },
+    computed:{
+
+    },
     methods: {
         createCard(){
             axios.get(this.urlApi).then((element) => {
                 this.arrayCards = element.data.response
-                console.log(this.arrayCards)
             })
+        },
+        compareGenre(genere){
+            this.genre = genere
         }
     }
 }
@@ -40,6 +51,13 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    position: relative;
+
+    .genre{
+        position: absolute;
+        top: -50px;
+        color: white;
+    }
 }
 
 </style>
