@@ -22,13 +22,7 @@ export default {
         return{
             selected: 'All'
         }
-    },
-    computed:{
-        filteredGenre(genre){
-            return this.$emit(genre)
-        }
-    },
-    
+    }
 }
 </script>
 
